@@ -141,6 +141,7 @@ input {
     float: left;
     margin: 0 50px;
     margin-top: 50px;
+    border-radius: 2px;
 }
 
 .partdiv:hover {

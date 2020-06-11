@@ -154,7 +154,7 @@ img {
 }
 
 .top h1 {
-    padding: 0 500px;
+    /* padding: 0 500px; */
     font-size: 1.8rem;
     height: 75px;
     line-height: 75px;
@@ -163,10 +163,15 @@ img {
     z-index: 999;
 }
 
+.top header {
+    display: flex;
+    align-items: center;
+}
+
 .rightUser {
     color: white;
     text-align: right;
-    margin-top: -53px;
+    /* margin-top: -53px; */
     position: fixed;
     /*固定在顶部*/
     right: 20px;

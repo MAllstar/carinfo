@@ -1,8 +1,18 @@
 <link rel="stylesheet" href="stylesheets/carMeneger.css" />
-<label class="carMenegerBread">后台管理 / 表格信息 / 车辆管理</label>
-<div class="carMenegerMaindiv">
+{{!-- <label class="carMenegerBread">后台管理 / 表格信息 / 车辆管理</label> --}}
+{{!-- <div class="carMenegerMaindiv"> --}}
+<div class="info-container">
+  <label class="carMenegerBread">后台管理 / 表格信息 / 车辆管理</label>
+  <div class="carMenegerMaindiv">
     <h3 class="carMenegerH3"></h3>
     <div>
+        {{!-- <label class="carMenegerLpositoin">牌照：</label>
+        <input id='license' type="text" class="carMenegerInput"></input>
+        <label class="carMenegerLpositoin">车主：</label>
+        <input id="carOwner" type="text" class="carMenegerInput"></input>
+        <label class="carMenegerLpositoin">所在rsu：</label>
+        <input id="rsu" type="text" class="carMenegerInput"></input>
+        <button id="add">添加</button> --}}
         <label class="carMenegerLpositoin">牌照：</label>
         <input id='license' type="text" class="carMenegerInput"></input>
         <label class="carMenegerLpositoin">车主：</label>
@@ -12,7 +22,7 @@
         <button id="add">添加</button>
     </div>
     <div>
-        <table id="carMenegerTable" cellpadding="0" cellspacing="0">
+        {{!-- <table id="carMenegerTable" cellpadding="0" cellspacing="0">
             <tr id='tableHead'>
                 <th style="width: 20%;"><input value="编号" onclick=cleanHead0() onchange=fun()></input></th>
                 <th style="width: 15%;"><input value="牌照" onclick=cleanHead1() onchange=fun()></input></th>
@@ -85,7 +95,102 @@
                 <td></td>
                 <td></td>
                 <td><button id="del7" class="carMenegerDelete">删除</button></td>
-        </table>
+        </table> --}}
+        <table id="carMenegerTable" cellpadding="0" cellspacing="0">
+        <tr id='tableHead'>
+          <th style="width: 20%;"><span>编号</span></th>
+          <th style="width: 15%;"><span>牌照</span></th>
+          <th style="width: 15%;"><span>车主</span></th>
+          <th style="width: 20%;"><span>信息</span></th>
+          <th style="width: 10%;"><span>所在路测单元</span></th>
+          <th style="width: 10%;"><span>时间</span></th>
+          <th style="width: 10%;"><button id="clean">还原</th>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button id="del0" class="carMenegerDelete">删除</button></td>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button id="del1" class="carMenegerDelete">删除</button></td>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button id="del2" class="carMenegerDelete">删除</button></td>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button id="del3" class="carMenegerDelete">删除</button></td>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button id="del4" class="carMenegerDelete">删除</button></td>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button id="del5" class="carMenegerDelete">删除</button></td>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button id="del6" class="carMenegerDelete">删除</button></td>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button id="del7" class="carMenegerDelete">删除</button></td>
+      </table>
+    </div>
+
+    <div class='pages'>
+        <a href="/carMeneger?pageNumber={{pageNumberDel}}">
+            {{!-- <</a> <a href="/rsu?pageNumber={{pageNumberDel}}">{{pageNumberDel}}
+        </a>
+        <a href="/carMeneger?pageNumber={{pageNumber}}">{{pageNumber}}</a>
+        <a href="/carMeneger?pageNumber={{pageNumberAdd}}" class="thisSelect">{{pageNumberAdd}}</a>
+        <a href="/carMeneger?pageNumber={{pageNumberAdd}}">></a>
+      <a href="/carMeneger?pageNumber={{pageNumberDel}}">
+      <</a> <a href="/rsu?pageNumber={{pageNumberDel}}">{{pageNumberDel}}
+      </a>
+      <a href="/carMeneger?pageNumber={{pageNumber}}">{{pageNumber}}</a>
+      <a href="/carMeneger?pageNumber={{pageNumberAdd}}" class="thisSelect">{{pageNumberAdd}}</a> --}}
+      <a href="/carMeneger?pageNumber={{pageNumberDel}}">
+      <</a> <a href="/rsu?pageNumber={{pageNumberDel}}">{{pageNumberDel}}
+      </a>
+      <a href="/carMeneger?pageNumber={{pageNumber}}">{{pageNumber}}</a>
+      <a href="/carMeneger?pageNumber={{pageNumberAdd}}" class="thisSelect">{{pageNumberAdd}}</a>
+      <a href="/carMeneger?pageNumber={{pageNumberAdd}}">></a>
+      <a href="/carMeneger?pageNumber={{pageNumberAdd}}">></a>
     </div>
 
     <div class='pages'>
@@ -94,14 +199,17 @@
         </a>
         <a href="/carMeneger?pageNumber={{pageNumber}}">{{pageNumber}}</a>
         <a href="/carMeneger?pageNumber={{pageNumberAdd}}" class="thisSelect">{{pageNumberAdd}}</a>
-        <a href="/carMeneger?pageNumber={{pageNumberAdd}}">></a>
+        <a href="/carMenpaeger?geNumber={{pageNumberAdd}}">></a>
     </div>
+    </div>>
 </div>
 
 {{!-- 页脚 --}}
 <div class="carMenegerFoot">
+    {{!-- <h2>© 2019 Internet of Vehicles. by the MLC Team.</h2> --}}
+    {{!-- <p>备案号：浙ICP备19051784号-1</p> --}}
     <h2>© 2019 Internet of Vehicles. by the MLC Team.</h2>
-    <p>备案号：浙ICP备19051784号-1</p>
+    <p>备案号：浙ICP备19051784号-1</p>    
 </div>
 
 <script>
