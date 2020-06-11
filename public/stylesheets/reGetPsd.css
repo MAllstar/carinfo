@@ -1,0 +1,129 @@
+/* 找回密码页css样式设置 */
+
+
+/* 总体样式设计 */
+
+body {
+    margin: 0px;
+    /*去除div两边留白*/
+}
+
+div {
+    /* 设置宽度高度背景颜色 */
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+
+/* 标题栏样式设置 */
+
+.top {
+    background: #F8F8F8;
+    position: fixed;
+    /*固定在顶部*/
+    top: 0;
+    /*离顶部的距离为0*/
+    margin-bottom: 5px;
+}
+
+.top h1 {
+    padding: 0 300px;
+    float: left;
+    font-size: 1.2rem;
+    height: 40px;
+    line-height: 60px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.top input {
+    background: #0E90D2;
+    border: none;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.title {
+    margin-top: 100px;
+}
+
+.title h2 {
+    color: #34495E;
+    letter-spacing: 50px;
+    font-size: 35px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    color: #34495E;
+    font-size: 17px;
+    font-weight: 700;
+    margin-left: -255px;
+    padding-top: 30px;
+}
+
+form input {
+    width: 350px;
+    height: 23px;
+    margin-top: 5px;
+}
+
+.btn1 {
+    background: #0E90D2;
+    border: none;
+    margin-top: 25px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 130px;
+    height: auto;
+    margin-left: -59px;
+}
+
+.btn2 {
+    background: #0E90D2;
+    border: none;
+    margin-top: 25px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 130px;
+    height: auto;
+    margin-left: -300px;
+}
+
+
+/* 页脚 */
+
+.foot {
+    margin-top: 520px;
+    height: 90px;
+    background: #2D3E50;
+}
+
+.foot h2 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding-top: 22px;
+    color: #7F8C8D;
+}
+
+.foot p {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #7F8C8D;
+}

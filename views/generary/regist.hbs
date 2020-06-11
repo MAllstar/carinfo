@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="stylesheets/regist.css" />
+{{!-- 标题栏 --}}
+<div class="top">
+    <center>
+        <h1>Internet of Vehicles</h1>
+        <a href="/login"><input id="login" type="button" value="登陆"></a>
+        <a href="/"><input id="back" type="button" value="返回"></a>
+    </center>
+</div>
+<div class="title">
+    <h2>注册页</h2>
+</div>
+<div class="divLeft">
+    <form action="/regist" method="POST">
+        <div class="message">{{message}}</div>
+        <label>你的邮箱</label>
+        <div><input type="text" name="mail" placeholder="mail" id='mail' required></div>
+        <label>你的密码</label>
+        <div><input type="password" name="psd" placeholder="password" required></div>
+        <label>确认密码</label>
+        <div><input type="password" name="psdAgain" placeholder="password-again" required></div>
+        <label>输入验证码</label>
+        <div><input type="text" name="vsCode" placeholder="vsCode" required></div>
+        <div>
+            <input type="button" id='getVsCode' class="btn1" name="getVsCode" value='验证码'>
+            <input type="submit" class="btn2" value="注册">
+        </div>
+    </form>
+</div>
+<div class="divRight">
+    <label>关于车联网</label>
+    <p>
+        车联网的内涵主要指：车辆上的车载设备通过无线通信技术，对信息网络平台中的所有车辆动态信息进行
+        有效利用，在车辆运行中提供不同的功能服务。可以发现，车联网表现出以下几点特征：车联网能够为
+        车与车之间的间距提供保障，降低车辆发生碰撞事故的几率；车联网可以帮助车主实时导航，并通过与
+        其它车辆和网络系统的通信，提高交通运行的效率。
+    </p>
+    <label>团队介绍</label>
+    <p>
+        我们团队致力于打造一个以提升用户信息安全为主旨，实时获取车辆共享信息、路况信息等，对其进行加密从而安全分发到具体用户的车联网信息安全分发平台。
+    </p>
+</div>
+{{!-- 页脚 --}}
+<div class="foot">
+    <h2>© 2019 Internet of Vehicles. by the MLC Team.</h2>
+    <p>备案号：浙ICP备19051784号-1</p>
+</div>
+<script>
+    var countdown;
+    var str = document.cookie.indexOf("countdown=");
+    if (str != -1) {
+        countdown = getCookie('countdown');
+    }
+    else {
+        countdown = '验证码';
+    }
+    function cut() {
+        if (countdown == '验证码' || countdown == 0) {
+            countdown = '验证码';
+        }
+        else {
+            countdown--;
+        }
+        $("#getVsCode").val(countdown);
+        document.cookie = "countdown=" + countdown;
+    }
+    var a = setInterval(cut, 1000);
+
+    $("#getVsCode").click(function () {
+        //当按钮val为验证码时才发送邮件
+        if ($("#getVsCode").val() == '验证码') {
+            //发送邮件
+            var mail = $("#mail").val();
+            var regMail = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;//用来判断邮箱格式
+            if (regMail.test(mail)) {//判断邮箱格式
+                $.get('/sendMail', { mail: mail });
+            }
+            else {
+                alert("邮箱格式错误");
+            }
+        }
+        if (countdown == '验证码') {
+            countdown = 60;
+            $("#getVsCode").val(countdown);
+        }
+    })
+    function getCookie(name) {
+        var strcookie = document.cookie;//获取cookie字符串
+        var arrcookie = strcookie.split("; ");//分割
+        //遍历匹配
+        for (var i = 0; i < arrcookie.length; i++) {
+            var arr = arrcookie[i].split("=");
+            if (arr[0] == name) {
+                return arr[1];
+            }
+        }
+        return "";
+    }
+</script>

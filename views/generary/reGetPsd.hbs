@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="stylesheets/reGetPsd.css"/>
+{{!-- 标题栏 --}}
+<div class="top">
+    <center>
+        <h1>Internet of Vehicles</h1>
+        <a href="/login"><input id="login" type="button" value="登陆"></a>
+        <a href="/"><input id="back" type="button" value="返回"></a>
+    </center>
+</div>
+<div class="title">
+    <h2>找回密码页</h2>
+</div>
+<form action="/reGetPsd" method="POST">
+    <div>{{message}}</div>
+    <label>你的邮箱</label>
+    <div><input type="text" id="mail" name="mail" placeholder="mail"></div>
+    <label>你的密码</label>
+    <div><input type="text" id="newPsd" name="newPsd" placeholder="newPsd"></div>
+    <label>确认密码</label>
+    <div><input type="text" id="newPsdAgain" name="newPsdAgain" placeholder="newPsdAgain"></div>
+    <label>你的验证码</label>
+    <div><input type="text" name="vsCode" placeholder="vsCode"></div>
+    <div>
+        <input type="button" id='getVsCode' class="btn1" name="getVsCode" value='验证码'>
+        <input type="submit" class="btn2" value="找回">
+    </div>
+</form>
+{{!-- 页脚 --}}
+<div class="foot">
+    <h2>© 2019 Internet of Vehicles. by the MLC Team.</h2>
+    <p>备案号：浙ICP备19051784号-1</p>
+</div>
+<script>
+    var countdown;
+    var str =document.cookie.indexOf("countdown=");
+    if(str != -1){
+        countdown = getCookie('countdown');
+    }
+    else{
+        countdown = '验证码';
+    }
+    function cut(){
+        if(countdown == '验证码'|| countdown == 0){
+            countdown = '验证码';
+        }
+        else{
+            countdown--;
+        }
+        $("#getVsCode").val(countdown);
+        document.cookie = "countdown=" + countdown;
+    }
+    var a = setInterval(cut,1000);
+
+    $("#getVsCode").click(function(){
+        //当按钮val为验证码时才发送邮件
+        if($("#getVsCode").val() == '验证码'){
+            //发送邮件
+            var mail = $("#mail").val();
+            var regMail = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;//用来判断邮箱格式
+            if(regMail.test(mail)){//判断邮箱格式
+                $.get('/sendMail',{mail:mail});  
+            }
+            else{
+                alert("邮箱格式错误");
+            }
+        }
+        if(countdown == '验证码'){
+            countdown = 10;
+            $("#getVsCode").val(countdown);
+        }
+    })
+    function getCookie(name){
+        var strcookie = document.cookie;//获取cookie字符串
+        var arrcookie = strcookie.split("; ");//分割
+        //遍历匹配
+        for ( var i = 0; i < arrcookie.length; i++) {
+            var arr = arrcookie[i].split("=");
+            if (arr[0] == name){
+                return arr[1];
+            }
+        }
+        return "";
+    }
+</script>

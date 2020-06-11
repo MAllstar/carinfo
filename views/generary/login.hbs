@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="stylesheets/login.css" />
+
+{{!-- 标题栏 --}}
+<div class="top">
+    <center>
+        <h1>Internet of Vehicles</h1>
+        <a href="/regist"><input id="login" type="button" value="注册"></a>
+        <a href="/"><input id="back" type="button" value="返回"></a>
+    </center>
+</div>
+
+<div class="title">
+    <h2>登陆页</h2>
+</div>
+<form action="/login" method="POST">
+    <div>{{message}}</div>
+    <label>你的邮箱</label>
+    <div><input type="text" id="mail" name="mail" placeholder="mail" required></div>
+    <label>你的密码</label>
+    <div><input type="password" id="psd" name="psd" placeholder="password" required></div>
+    <div>
+        <input type="submit" class="btn1" value="登陆">
+        <a href="/reGetPsd"><input type="button" class="btn2" value="找回密码"></a>
+    </div>
+</form>
+{{!-- 页脚 --}}
+<div class="foot">
+    <h2>© 2019 Internet of Vehicles. by the MLC Team.</h2>
+    <p>备案号：浙ICP备19051784号-1</p>
+</div>
+
+<script>
+    $(function() {
+        $('.btn1').click( function() {
+            var userName = $('#mail').val();
+            $.cookie('userName', userName, {path:"/"});   
+        })
+    })   
+</script>

@@ -1,0 +1,52 @@
+ul {
+    list-style-type: none
+}
+
+.total {
+    width: 20%;
+    margin-left: 7%;
+}
+
+.totalRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: flex-start;
+}
+
+.commits {
+    width: 100%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: flex-start;
+}
+
+.chats {
+    width: 40%;
+    margin-left: 10%;
+}
+
+@media screen and (max-width: 1325px) {
+    #page-wrappe {
+        width: 100%;
+    }
+    .row {
+        width: 100%;
+    }
+    .commits {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .chats {
+        width: 100%;
+        margin-left: 0px;
+    }
+    .commits .white-box {
+        width: 80%;
+    }
+    .table .white-box {
+        margin-left: 4%;
+    }
+}

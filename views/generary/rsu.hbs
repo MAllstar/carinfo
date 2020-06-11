@@ -1,0 +1,285 @@
+<link rel="stylesheet" href="stylesheets/rsu.css" />
+<label class="rsuBread">后台管理 / 表格信息 / 路测单元</label>
+<div class="rusMaindiv">
+    <h3 class="rsuH3"></h3>
+    <div>
+        <label class="rsuLpositoin">经纬度：</label>
+        <input id='loAndLa' type="text" class="rsuInput"></input>
+        <label class="rsuLpositoin">组别：</label>
+        <input id="group" type="text" class="rsuInput"></input>
+        <button id="add">添加</button>
+    </div>
+    <div>
+        <table id="rsuTable" cellpadding="0" cellspacing="0">
+            <tr id='tableHead'>
+                <th style="width: 20%;"><input value="编号" onclick=cleanHead0() onchange=fun()></input></th>
+                <th style="width: 20%;"><input value="经纬度" onclick=cleanHead1() onchange=fun()></input></th>
+                <th style="width: 20%;"><input value="范围内车辆数" onclick=cleanHead2() onchange=fun()></input></th>
+                <th style="width: 15%;"><input value="状态" onclick=cleanHead3() onchange=fun()></input></th>
+                <th style="width: 15%;"><input value="组别" onclick=cleanHead4() onchange=fun()></input></th>
+                <th style="width: 10%;"><button id="clean">还原</th>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="del0" class="rsuDelete">删除</button></td>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="del1" class="rsuDelete">删除</button></td>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="del2" class="rsuDelete">删除</button></td>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="del3" class="rsuDelete">删除</button></td>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="del4" class="rsuDelete">删除</button></td>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="del5" class="rsuDelete">删除</button></td>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="del6" class="rsuDelete">删除</button></td>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="del7" class="rsuDelete">删除</button></td>
+        </table>
+    </div>
+
+    <div class='pages'>
+        <a href="/rsu?pageNumber={{pageNumberDel}}"><
+            </a> <a href="/rsu?pageNumber={{pageNumberDel}}">{{pageNumberDel}}
+        </a>
+        <a href="/rsu?pageNumber={{pageNumber}}">{{pageNumber}}</a>
+        <a href="/rsu?pageNumber={{pageNumberAdd}}" class="thisSelect">{{pageNumberAdd}}</a>
+        <a href="/rsu?pageNumber={{pageNumberAdd}}">></a>
+    </div>
+</div>
+
+{{!-- 页脚 --}}
+<div class="rsuFoot">
+    <h2>© 2019 Internet of Vehicles. by the MLC Team.</h2>
+    <p>备案号：浙ICP备19051784号-1</p>
+</div>
+
+<script>
+    //显示目录
+    $('#directory').css("display", 'block');
+
+    //初始化数据及变量
+    var pageNumber = 0;
+    pageNumber = getQueryStringArgs()["pageNumber"] || 0;
+    var _id = $("#clean").parents("tr").find("th").eq(0).find("input").val();
+    var loAndLa = $("#clean").parents("tr").find("th").eq(1).find("input").val();
+    var carNum = $("#clean").parents("tr").find("th").eq(2).find("input").val();
+    var state = $("#clean").parents("tr").find("th").eq(3).find("input").val();
+    var group = $("#clean").parents("tr").find("th").eq(4).find("input").val();
+
+    //显示初始数据
+    refresh();
+
+    //cleanHead
+    function cleanHead0() {
+        $("#clean").parents("tr").find("th").eq(0).find("input").val("");
+    }
+    function cleanHead1() {
+        $("#clean").parents("tr").find("th").eq(1).find("input").val("");
+    }
+    function cleanHead2() {
+        $("#clean").parents("tr").find("th").eq(2).find("input").val("");
+    }
+    function cleanHead3() {
+        $("#clean").parents("tr").find("th").eq(3).find("input").val("");
+    }
+    function cleanHead4() {
+        $("#clean").parents("tr").find("th").eq(4).find("input").val("");
+    }
+
+    //清除按钮
+    $("#clean").click(function () {
+        $("#clean").parents("tr").find("th").eq(0).find("input").val("编号");
+        $("#clean").parents("tr").find("th").eq(1).find("input").val("经纬度");
+        $("#clean").parents("tr").find("th").eq(2).find("input").val("范围内车辆数");
+        $("#clean").parents("tr").find("th").eq(3).find("input").val("状态");
+        $("#clean").parents("tr").find("th").eq(4).find("input").val("组别");
+        fun()
+    })
+
+    //删除按钮，获取当前删除按钮的_id，传递到/rsu/dalData路由并删除
+    $("#del0").click(function () {
+        var _id = $("#del0").parents("tr").find("td").eq(0).text();
+        del(_id);
+    })
+
+    $("#del1").click(function () {
+        var _id = $("#del1").parents("tr").find("td").eq(0).text();
+        del(_id);
+    })
+
+    $("#del2").click(function () {
+        var _id = $("#del2").parents("tr").find("td").eq(0).text();
+        del(_id);
+    })
+
+    $("#del3").click(function () {
+        var _id = $("#del3").parents("tr").find("td").eq(0).text();
+        del(_id);
+    })
+
+    $("#del4").click(function () {
+        var _id = $("#del4").parents("tr").find("td").eq(0).text();
+        del(_id);
+    })
+
+    $("#del5").click(function () {
+        var _id = $("#del5").parents("tr").find("td").eq(0).text();
+        del(_id);
+    })
+
+    $("#del6").click(function () {
+        var _id = $("#del6").parents("tr").find("td").eq(0).text();
+        del(_id);
+    })
+
+    $("#del7").click(function () {
+        var _id = $("#del7").parents("tr").find("td").eq(0).text();
+        del(_id);
+    })
+
+    //添加按钮传数据到后端写入数据库
+    $('#add').click(function () {
+        $.get('/rsu/rsuDatabase',
+            {
+                loAndLa: $('#loAndLa').val(),
+                group: $('#group').val()
+            }
+        );
+        alert("添加成功");
+        $('#loAndLa').val('');
+        $('#group').val('');
+        refresh();
+    })
+
+    //前端获取url参数
+    function getQueryStringArgs() {
+        //取得查询字符串并去掉开头的问号
+        var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
+            //保存数据的对象
+            args = {},
+            //取得每一项
+            items = qs.length ? qs.split("&") : [],
+            item = null,
+            name = null,
+            value = null,
+            //在 for 循环中使用
+            i = 0,
+            len = items.length;
+        //逐个将每一项添加到 args 对象中
+        for (i = 0; i < len; i++) {
+            item = items[i].split("=");
+            name = decodeURIComponent(item[0]);
+            value = decodeURIComponent(item[1]);
+            if (name.length) {
+                args[name] = value;
+            }
+        }
+        return args;
+    }
+
+    //用来监听input的输入
+    function fun() {
+        _id = $("#clean").parents("tr").find("th").eq(0).find("input").val();
+        loAndLa = $("#clean").parents("tr").find("th").eq(1).find("input").val();
+        carNum = $("#clean").parents("tr").find("th").eq(2).find("input").val();
+        state = $("#clean").parents("tr").find("th").eq(3).find("input").val();
+        group = $("#clean").parents("tr").find("th").eq(4).find("input").val();
+        refresh();
+    }
+
+    //用来删除数据，按_id删除
+    function del(_id) {
+        $.get('/rsu/delData',
+            { _id: _id },
+            function (result) {
+                confirm(result);
+                refresh();
+            }
+        );
+    }
+
+    //刷新表格数据
+    function refresh() {
+        $.get('/rsu/getData',
+            {
+                _id: _id,
+                loAndLa: loAndLa,
+                carNum: carNum,
+                state: state,
+                group, group
+            },
+            function (data) {
+                //清空表
+                cleanTable();
+                if (data.length == undefined) {
+                    var tr = $('#rsuTable').find('tr');
+                    $(tr[1]).find('td').eq(0).text(data._id);
+                    $(tr[1]).find('td').eq(1).text(data.loAndLa);
+                    $(tr[1]).find('td').eq(2).text(data.carNum);
+                    $(tr[1]).find('td').eq(3).text(data.state);
+                    $(tr[1]).find('td').eq(4).text(data.group);
+                }
+                else {
+                    for (var i = 0; i < 8; i++) {
+                        var a = []; a[0] = data[i + 8 * pageNumber]._id; a[1] = data[i + 8 * pageNumber].loAndLa;
+                        a[2] = data[i + 8 * pageNumber].carNum; a[3] = data[i + 8 * pageNumber].state; a[4] = data[i + 8 * pageNumber].group;
+                        for (var j = 0; j < 5; j++) {
+                            var tr = $('#rsuTable').find('tr');
+                            $(tr[i + 1]).find('td').eq(j).text(a[j]);
+                        }
+                    }
+                }
+            }
+        );
+    }
+
+    //清空表
+    function cleanTable() {
+        for (var i = 0; i < 8; i++) {
+            for (var j = 0; j < 5; j++) {
+                var tr = $('#rsuTable').find('tr');
+                $(tr[i + 1]).find('td').eq(j).text("");
+            }
+        }
+    };
+</script>

@@ -1,0 +1,81 @@
+
+<link rel="stylesheet" href="stylesheets/imitate.css" />
+<body>
+    <label class="imitateBread">后台管理 / 模拟平台</label>
+    <canvas id="canvas" 
+    		width="1570px" height="700px" class="style" style="margin-top: 20px;background:white;border:none;margin-left:300px">
+    </canvas>
+
+    <form class="btn_style">
+        <button id="btn_start" type='button' class="imitateBUtton">开始</button>
+        <button id="btn_stop" type='button' class="imitateBUtton">暂停</button>
+        <button id="btn_restart" type='button' class="imitateBUtton">重置</button>
+        <button type="button" id="msg_send" class="imitateBUtton">发送</button> 
+    </form>
+    <p class="p1">小车自身策略:</p>
+    <p class="p2">选择信息策略:</p>
+    <form class="radio_style">
+        省内
+        <input type="radio" name="fromWhere" id="fromWhere_1" checked="checked" value="inProvince">
+        省外
+        <input type="radio" name="fromWhere" id="fromWhere_2" value="outProvince">
+    </form>
+
+    <form class="dirction_style">
+        向右
+        <input type="radio" name="direction" id="direction_1" checked="checked" value="东到西">
+        向左
+        <input type="radio" name="direction" id="direction_2" value="西到东">
+        向下
+        <input type="radio" name="direction" id="direction_3" value="北到南">
+        向上
+        <input type="radio" name="direction" id="direction_4" value="南到北">
+    </form>
+    
+    <form class="carSpeed_style">
+        <input type="text" name="carSpeed" id='carSpeed' value='10'>km/h
+    </form>
+
+
+    <form class="msg_radio_style">
+        省内
+        <input type="radio" name="msg_fromWhere" id="msg_fromWhere_1" checked="checked" value="inProvince">
+        省外
+        <input type="radio" name="msg_fromWhere" id="msg_fromWhere_2" value="outProvince">
+    </form>
+
+    <form class="msg_dirction_style">
+        东到西
+        <input type="radio" name="msg_direction" id="msg_direction_1" checked="checked" value="东到西">
+        西到东
+        <input type="radio" name="msg_direction" id="msg_direction_2" value="西到东">
+        北到南
+        <input type="radio" name="msg_direction" id="msg_direction_3" value="北到南">
+        南到北
+        <input type="radio" name="msg_direction" id="msg_direction_4" value="南到北">
+    </form>
+
+    <form class="msg_carSpeed_style">
+        <input type="text" name="msg_carSpeed" id='msg_carSpeed1' value='10'>~
+        <input type="text" name="msg_carSpeed" id='msg_carSpeed2' value='10'>km/h
+    </form>
+
+    {{!-- 页脚 --}}
+<div class="imitateFoot">
+    <h2>© 2019 Internet of Vehicles. by the MLC Team.</h2>
+    <p>备案号：浙ICP备19051784号-1</p>
+</div>
+
+    <script src="javascript/requestNextAnimationFrame.js"></script>
+    <script src="javascript/var.js"></script>
+    <script src="javascript/function.js"></script>
+    <script src="javascript/run.js"></script>
+    <script src="javascript/Text.js"></script>
+
+</body>
+<script>
+    $("#directory").css('display', 'block');
+</script>
+
+
+

@@ -1,0 +1,186 @@
+/* 首页css样式设置 */
+
+
+/* 总体样式设计 */
+
+body {
+    margin: 0px;
+    /*去除div两边留白*/
+}
+
+div {
+    /* 设置宽度高度背景颜色 */
+    height: auto;
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+
+p {
+    line-height: 28px;
+}
+
+.indexImg {
+    width: 100%;
+    height: 100%;
+    max-width: 532px;
+}
+
+h2 {
+    letter-spacing: 20px;
+    margin-top: 50px;
+}
+
+input {
+    background: #0E90D2;
+    border: none;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+
+/* 标题栏样式设置 */
+
+.top {
+    background: #F8F8F8;
+    position: fixed;
+    /*固定在顶部*/
+    top: 0;
+    /*离顶部的距离为0*/
+    margin-bottom: 5px;
+    opacity: .95;
+}
+
+.top h1 {
+    padding: 0 300px;
+    float: left;
+    font-size: 1.2rem;
+    height: 40px;
+    line-height: 60px;
+    color: #666666;
+    cursor: pointer;
+}
+
+
+/* 第二块简单介绍 */
+
+.history {
+    margin-bottom: 20px;
+}
+
+.screen {
+    /* 设置宽度高度背景颜色 */
+    background: #0E90D2;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.screen h1 {
+    border: 3px solid white;
+    color: white;
+    padding: 30px 100px;
+    width: 20%;
+    margin: 50px auto;
+}
+
+.screen p {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.screen button {
+    border: none;
+    background: white;
+    cursor: pointer;
+    padding: 10px 30px;
+    color: #0E90D2;
+    margin-top: 8px;
+}
+
+
+/* 第三块发展历史 */
+
+.lin {
+    margin: 0 auto;
+    width: 70%;
+    text-indent: 2em;
+    font: Arial;
+    font-size: 12px;
+}
+
+
+/* 第四块分割 */
+
+.partline {
+    background: #0BB59B;
+    height: 150px;
+}
+
+.partline h2 {
+    padding-top: 60px;
+}
+
+
+/* 第五块消息板块 */
+
+.part-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.partdiv {
+    border: 1px solid #0E90D2;
+    width: 20%;
+    min-width: 190px;
+    float: left;
+    margin: 0 50px;
+    margin-top: 50px;
+}
+
+.partdiv:hover {
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -moz-transform: rotate(45deg);
+    /* Firefox */
+    -webkit-transform: rotate(45deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(45deg);
+    /* Opera */
+    transition: all .8s;
+}
+
+
+/* 页脚 */
+
+.foot {
+    background: #2D3E50;
+}
+
+.foot h2 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding-top: 22px;
+    color: #7F8C8D;
+}
+
+.foot p {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #7F8C8D;
+}
+
+@media screen and (max-width: 785px) {
+    .top h1 {
+        display: none;
+    }
+    .partline h2 {
+        display: none;
+    }
+}

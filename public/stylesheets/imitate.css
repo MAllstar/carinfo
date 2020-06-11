@@ -1,0 +1,95 @@
+.style {
+    border: 1px solid #000000;
+}
+
+.imitateBUtton {
+    background: #1890FF;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 10px 15px;
+    color: white;
+    margin-left: 10px;
+}
+
+.imitateBread {
+    float: left;
+    color: #1890ff;
+    margin-left: 330px;
+    margin-top: 100px;
+}
+
+.p1 {
+    position: absolute;
+    left: 1300px;
+    top: 200px;
+}
+
+.radio_style {
+    position: absolute;
+    left: 1300px;
+    top: 250px;
+}
+
+.dirction_style {
+    position: absolute;
+    left: 1300px;
+    top: 300px;
+}
+
+.carSpeed_style {
+    position: absolute;
+    left: 1300px;
+    top: 350px;
+}
+
+.p2 {
+    position: absolute;
+    left: 1300px;
+    top: 400px;
+}
+
+.msg_radio_style {
+    position: absolute;
+    left: 1300px;
+    top: 450px;
+}
+
+.msg_dirction_style {
+    position: absolute;
+    left: 1300px;
+    top: 500px;
+}
+
+.msg_carSpeed_style {
+    position: absolute;
+    left: 1300px;
+    top: 550px;
+}
+
+.btn_style {
+    position: absolute;
+    left: 1300px;
+    top: 600px;
+}
+
+.imitateFoot {
+    float: left;
+    margin-top: 150px;
+    margin-left: 300px;
+    width: 84.1%;
+    height: 90px;
+    background: white;
+}
+
+.imitateFoot h2 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #7F8C8D;
+}
+
+.imitateFoot p {
+    text-align: center;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #7F8C8D;
+}

@@ -1,0 +1,263 @@
+<link rel="stylesheet" href="stylesheets/directory.css" />
+<link rel="stylesheet" href="stylesheets/style.css"/>
+<div id='directory' style="display: none;">
+    {{!-- 标题栏 --}}
+    <div class="top">
+         <div  id="siderTop">
+            <h2 class="tip"><img src="images/logo.png">Internet of Vehicles</h2>
+        </div>
+        <header class="heading">
+            <h1 class="headline">车联网信息分发后台管理</h1>    
+            <div class="rightUser">
+                <ul class="nav navbar-top-links navbar-right pull-right in">
+                        <li class="menu">
+                            <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg" href="javascript:void(0)"><svg t="1577091664120" class="icon" viewBox="0 0 1228 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12858" width="24" height="24"><path d="M85.333333 85.333333h853.333334a85.333333 85.333333 0 0 1 0 170.666667H85.333333a85.333333 85.333333 0 0 1 0-170.666667z m0 341.333334h853.333334a85.333333 85.333333 0 0 1 0 170.666666H85.333333a85.333333 85.333333 0 0 1 0-170.666666z m0 341.333333h853.333334a85.333333 85.333333 0 0 1 0 170.666667H85.333333a85.333333 85.333333 0 0 1 0-170.666667z" fill="#ffffff" p-id="12859"></path></svg></a>
+                        </li>
+                        <li class="in">
+                            <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
+                                <input type="text" placeholder="Search..." class="form-control"> 
+                                <a href="#" class="active">
+                                    <i class="fa fa-search"><svg t="1577016435919" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3724" width="24" height="24"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z" fill="#181818" p-id="3725"></path></svg></i>
+                                </a> 
+                            </form>
+                        </li>
+                        <li class="dropdown">
+                        <a class="profile-pic active" href="#"> <img src="/images/people.png" alt="user-img" width="36"
+                                class="img-circle"><b class="hidden-xs" id="abc">190681615@qq.com</b></a>
+                        <div class="dropdown-content">
+                            <ul class="dropdown" style=";list-style:none">
+                                <li>
+                                    <a href="#" onclick="dianwo()"><span style="vertical-align:sub"><svg
+                                                t="1577157445272" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg" p-id="2629" width="20" height="20">
+                                                <path
+                                                    d="M602.909499 594.549088c90.756003-35.82902 154.996097-124.260072 154.996097-227.751121 0-135.215588-109.606327-244.848521-244.824985-244.848521-135.215588 0-244.846474 109.632933-244.846474 244.848521 0 103.491049 64.25442 191.922101 155.016563 227.751121C261.35445 622.847597 129.105427 726.142172 72.586179 862.823134l880.966353 0C897.042493 726.141148 764.804726 622.847597 602.909499 594.549088z"
+                                                    p-id="2630"></path>
+                                            </svg>
+                                        </span>个人信息</a>
+                                </li>
+                                {{!-- <li><a href="#" onclick="dian()"><span style="vertical-align:sub"><svg t="1577158651771"
+                                                class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg" p-id="3100" width="20" height="20">
+                                                <path
+                                                    d="M899.2 169.024c21.312 21.312 32.256 47.68 32.832 79.168v498.752c-0.576 31.488-11.52 57.728-32.832 78.72-21.312 20.992-47.68 32.064-79.168 33.28h-560l-128.64 112c-5.824 5.248-12.096 7.872-18.816 7.872s-11.84-2.624-15.296-7.872c-2.368-2.944-3.776-5.824-4.352-8.768-0.576-2.944-0.896-5.824-0.896-8.768V248.192c0.576-31.488 11.52-57.856 32.832-79.168s47.68-32.256 79.168-32.832h616c31.488 0.576 57.856 11.52 79.168 32.832z m-157.952 265.984c11.072-9.6 16.64-21.568 16.64-35.904 0-14.272-4.672-26.112-14.016-35.456s-21.312-14.272-35.904-14.848H321.28c-14.016 0.576-25.792 5.568-35.456 14.848-9.6 9.344-14.464 21.12-14.464 35.456 0 14.272 4.8 26.24 14.464 35.904s21.44 14.464 35.456 14.464h381.504c14.528-0.064 27.392-4.864 38.464-14.464z m0 185.024c11.072-9.344 16.64-21.312 16.64-35.904 0-14.592-4.672-26.56-14.016-35.904s-21.312-14.272-35.904-14.848H321.28c-14.016 0.576-25.792 5.568-35.456 14.848-9.6 9.344-14.464 21.312-14.464 35.904 0 14.592 4.8 26.56 14.464 35.904 9.6 9.344 21.44 14.272 35.456 14.848h381.504c14.528-0.512 27.392-5.504 38.464-14.848z"
+                                                    p-id="3101"></path>
+                                            </svg>
+                                        </span>建议留言</a></li> --}}
+                                <li><a href="/"><span style="vertical-align:sub"><svg t="1577158903928" class="icon"
+                                                viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                p-id="6012" width="20" height="20">
+                                                <path
+                                                    d="M802.151864 143.681903c31.235972 22.212313 59.004583 47.37867 83.296916 75.486189 24.297287 28.115447 45.120277 58.481358 62.471944 91.10467 17.356621 32.624303 30.543292 67.159173 39.568933 103.600644 9.023659 36.441472 13.533507 73.402205 13.533507 110.886164 0 64.556918-12.320575 125.116314-36.960733 181.691069-24.64214 56.569801-57.962096 105.853091-99.955902 147.845906-41.993807 41.998761-91.277096 75.313762-147.850861 99.955902-56.56881 24.64115-117.134151 36.965688-181.684132 36.965688-63.860275 0-124.078781-12.324539-180.648582-36.965688C297.348198 929.610306 247.89149 896.295305 205.55283 854.296544c-42.343615-41.992816-75.661588-91.276106-99.955902-147.845906C81.300632 649.875883 69.155456 589.315496 69.155456 524.759569c0-36.787316 4.33643-72.883934 13.015236-108.282918 8.678806-35.398984 20.996408-69.064784 36.960733-100.99839 15.968289-31.926669 35.749783-61.774309 59.350427-89.536975 23.599653-27.768611 49.974978-52.757587 79.131921-74.968909 15.272637-11.107643 31.755233-15.271646 49.456708-12.496965 17.696519 2.781618 32.100087 11.454478 43.20872 26.030472 11.108634 14.58194 15.271646 30.890128 12.496965 48.938437-2.781618 18.047318-11.454478 32.622321-26.029481 43.732937-43.732937 31.926669-77.225319 71.144804-100.480119 117.652422-23.247863 46.507618-34.873777 96.483587-34.873777 149.930881 0 45.810975 8.67286 89.026632 26.030472 129.631116 17.351666 40.605475 41.123746 76.003468 71.316239 106.197944 30.201412 30.19943 65.599405 54.144928 106.20488 71.846402 40.606466 17.696519 83.813205 26.548743 129.631116 26.548743 45.810975 0 89.018704-8.852223 129.62517-26.548743 40.606466-17.701474 76.009414-41.646971 106.202899-71.846402 30.195466-30.194475 54.139973-65.592469 71.841447-106.197944 17.702465-40.606466 26.548743-83.820141 26.548743-129.631116 0-54.138982-12.490028-105.333829-37.478013-153.576613-24.99393-48.240803-60.048061-87.977208-105.161402-119.21318-15.272637-10.411991-24.468723-24.643131-27.592221-42.69045-3.12548-18.048309 0.518271-34.708287 10.930261-49.981915 10.411991-14.575003 24.64214-23.427227 42.69045-26.547752C770.229159 129.630125 786.880218 133.269912 802.151864 143.681903L802.151864 143.681903zM534.570544 527.888022c-18.0493 0-33.494364-6.421405-46.336182-19.264214-12.841818-12.840827-19.263223-28.286882-19.263223-46.335191L468.971138 66.634956c0-18.048309 6.420414-33.6658 19.263223-46.853462 12.841818-13.188654 28.286882-19.781494 46.336182-19.781494 18.738016 0 34.529915 6.59284 47.371733 19.781494 12.841818 13.187663 19.262232 28.805153 19.262232 46.853462l0 395.65366c0 18.047318-6.420414 33.493373-19.262232 46.335191C569.100458 521.466617 553.308559 527.888022 534.570544 527.888022L534.570544 527.888022z"
+                                                    p-id="6013"></path>
+                                            </svg>
+                                        </span>退出登录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    {{!-- 个人信息弹窗 --}}
+    <div class="zhezhao" id='zhezhao'>
+        <div class="tankuang">
+            <div id="header">
+                <label>个人信息页</label>
+                <div id="header-right" onclick="hidder()">x</div>
+                <img src="images/heading.png" />
+                <div class="info">
+                    <p class="infoId"></p>
+                    <p>用户姓名：<span><input type="text" id="thisName"></span></p>
+                    <p>邮箱账号：<span><input type="text" id="thisEmail"></span></p>
+                    <p>初始密码：<span><input type="password" id="thisFirst"></span></p>
+                    <p>新的密码：<span><input type="password" id="thisSecond"></span></p>
+                    <p>手机号码：<span><input type="text" id="thisPhone"></span></p>
+                </div>
+                <button id="configureInfo">确认修改</button>
+            </div>
+        </div>
+    </div>
+
+    {{!-- 意见留言弹窗 --}}
+    {{!-- <div class="idBig" id='idBig'>
+        <div class="idMid">
+            <div id="idSma">
+                <label>建议留言页</label>
+                <div id="header-right" onclick="hidd()">x</div>
+                <div class="ideaINfo">
+                    <p>留言标题：<span><input type="text" class="thisClear" id="ideaTitle"></span></p>
+                    <p>留言内容：<span style="vertical-align: middle;"><textarea cols="85" rows="20" class="thisClear"
+                                id="ideaContent"></textarea></span></p>
+                    <p>联系电话：<span><input type="text" class="thisClear" id="ideaPhone"></span></p>
+                </div>
+                <button id="configureID">确认提交</button>
+            </div>
+        </div>
+    </div> --}}
+   
+    <div class="sider" id="sider">
+        <h2 class="tip"><img src="images/logo.png">Internet of Vehicles</h2>
+        <ul>
+            <a href="/dataStatistics"><li class="firstLi"><img src="images/data.png">数据统计</li></a>
+            <li class='formInfo'><img src="images/manger.png" ><span>表格信息</span></li>
+            <ul class='formDetial' style="display: block;">
+                <a href="/rsu" ><li class="rsu">路测单元</li></a>
+                <a href="/carMeneger" ><li class="car">车辆管理</li></a>
+                <a href="/msgSend"><li class="msg">信息分发</li></a>
+            </ul>
+            <a href='/map'><li class="map"><img src="images/map.png">地图显示</li></a>
+            {{!-- <a href='/imitate'><li class="imitate"><img src="images/share.png">模拟平台</li></a> --}}
+            <a href="/userMeneger"><li class="user"><svg t="1577012693859" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3605" width="24" height="24"><path d="M512 608a96 96 0 1 1 0-192 96 96 0 0 1 0 192m0-256c-88.224 0-160 71.776-160 160s71.776 160 160 160 160-71.776 160-160-71.776-160-160-160" fill="#000000" p-id="3606"></path><path d="M512 800c-212.064 0-384-256-384-288s171.936-288 384-288 384 256 384 288-171.936 288-384 288m0-640C265.248 160 64 443.008 64 512c0 68.992 201.248 352 448 352s448-283.008 448-352c0-68.992-201.248-352-448-352" fill="#54667A" p-id="3607"></path></svg>用户管理</li></a>
+        </ul>
+    </div>
+    <div class="sider" id="siderMenu">
+        <h2 class="tip"><img src="images/logo.png">Internet of Vehicles</h2>
+         <ul>
+            <a href="/dataStatistics"><li class="firstLi"><img src="images/data.png">数据统计</li></a>
+            <li class='formInfo'><img src="images/manger.png" ><span>表格信息</span></li>
+            <ul class='formDetial' style="display: block;">
+                <a href="/rsu" ><li class="rsu">路测单元</li></a>
+                <a href="/carMeneger"><li class="car">车辆管理</li></a>
+                <a href="/msgSend"><li class="msg">信息分发</li></a>
+            </ul>
+            <a href='/map'><li class="map"><img src="images/map.png">地图显示</li></a>
+            {{!-- <a href='/imitate'><li class="imitate"><img src="images/share.png">模拟平台</li></a> --}}
+            <a href="/userMeneger"><li class="user"><svg t="1577012693859" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3605" width="24" height="24"><path d="M512 608a96 96 0 1 1 0-192 96 96 0 0 1 0 192m0-256c-88.224 0-160 71.776-160 160s71.776 160 160 160 160-71.776 160-160-71.776-160-160-160" fill="#000000" p-id="3606"></path><path d="M512 800c-212.064 0-384-256-384-288s171.936-288 384-288 384 256 384 288-171.936 288-384 288m0-640C265.248 160 64 443.008 64 512c0 68.992 201.248 352 448 352s448-283.008 448-352c0-68.992-201.248-352-448-352" fill="#54667A" p-id="3607"></path></svg>用户管理</li></a>
+        </ul>
+    </div>
+</div>
+<script>
+    if($.cookie('type') == '1') {
+        $('.user').css('display', 'block');
+    }
+    else {
+         $('.user').css('display', 'none');
+    }
+
+    var oneId;
+    
+    //个人信息弹窗消失和显示
+    document.getElementById('zhezhao').style.display = "none";
+    function dianwo() {
+        document.getElementById('zhezhao').style.display = "";
+
+        $.get('/sendidea/showInfo', {
+            userId: $("#abc").text(),
+        },
+            function (data) {
+
+                $("#thisName").val(data[0].name);
+                $("#thisEmail").val(data[0].mail);
+                $("#thisPhone").val(data[0].phoneNumber);
+                oneId = data[0]._id;
+            })
+
+    }
+    function hidder() {
+        document.getElementById('zhezhao').style.display = "none";
+    }
+
+    //确认修改按钮事件
+    $("#configureInfo").click(function () {
+        $.get('/sendidea/showInfo', {
+            userId: $("#abc").text(),
+        },
+            function (data) {
+                if (data[0].password == $("#thisFirst").val()) {
+                    $.get('/sendidea/updateInfo', {
+                        oneId: oneId,
+                        thisName: $("#thisName").val(),
+                        thisEmail: $("#thisEmail").val(),
+                        thisPhone: $("#thisPhone").val(),
+                        thisSecond: $("#thisSecond").val()
+                    },
+                        function (data) {
+                            if (data == "success") {
+                                $("#thisFirst").val("");
+                                $("#thisSecond").val("");
+                                alert('修改成功');
+                            } else {
+                                alert('修改失败');
+                            }
+                        })
+                } else {
+                    alert('初始密码不正确');
+                }
+
+            })
+    });
+
+    {{!-- //留言弹窗消失和显示
+    document.getElementById('idBig').style.display = "none";
+    function dian() {
+        document.getElementById('idBig').style.display = "";
+    }
+    function hidd() {
+        document.getElementById('idBig').style.display = "none";
+        $(".thisClear").val("");
+    } --}}
+
+    //确认提交按钮事件
+    $("#configureID").click(function () {
+        $.get('/sendidea', {
+            userId: $("#abc").text(),
+            ideaTitle: $("#ideaTitle").val(),
+            ideaContent: $("#ideaContent").val(),
+            ideaPhone: $("#ideaPhone").val()
+        },
+            function (data) {
+                if (data == 'success') {
+                    alert('提交成功');
+                } else {
+                    alert('提交失败');
+                }
+
+            })
+    });
+
+
+    $(function(){
+        var cookie = $.cookie('page');
+        var name  = $.cookie('userName');
+        $('#abc').text(name);
+         //侧边导航栏变色
+        $(".sider ul li").css('border-right', '3px solid white');
+        $('.'+ cookie).css('border-right', '3px solid #41b3f9');
+        if ( cookie == 'rsu' || cookie == 'car' || cookie == 'msg') {
+            $('.formDetial').css('display', 'block');
+        }
+        //侧滑菜单里面的每个li
+        $('.sider li').click(function () { 
+            var page = $(this).attr("class");
+            // 设置cookie把现在选择的那个列的class值存起来
+            $.cookie('page', page, {path:"/"})
+        })
+        //收缩菜单，点击表格信息出现下面3个选项,
+        $(".formInfo").click(function () {
+            if ($('.formDetial').css('display') == 'none') {
+                
+                $('.formDetial').css('display', 'block');
+            }
+            else {
+                $('.formDetial').css('display', 'none');
+            }
+        })
+        //点击侧边导航栏变色
+        $(".sider ul li").click(function (e) {
+            $(".sider ul li").css('border-right', '3px solid white');
+            $(this).css('border-right', '3px solid #41b3f9');
+        })
+        //菜单栏显示
+        $(".menu").click(function (){
+            if( $("#siderMenu").css("display") == "none") {
+                $("#siderMenu").css("display", "block");
+            }
+            else {
+                $("#siderMenu").css("display", "none");
+            }
+        })
+    })
+
+</script>
