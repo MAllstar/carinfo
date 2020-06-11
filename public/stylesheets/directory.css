@@ -473,3 +473,9 @@ img {
         margin: 15% auto;
     }
 }
+
+@media (max-width: 376px) {
+    .hidden-xs {
+        visibility: hidden;
+    }
+}

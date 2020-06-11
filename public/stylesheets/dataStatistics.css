@@ -50,3 +50,11 @@ ul {
         margin-left: 4%;
     }
 }
+
+@media (max-width: 376px) {
+    .sparklinedash, 
+    .sparklinedash2, 
+    .sparklinedash3 {
+        margin-left: -40px;
+    }
+}
