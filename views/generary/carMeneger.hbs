@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="stylesheets/carMeneger.css" />
+<div class="info-container">
 <label class="carMenegerBread">后台管理 / 表格信息 / 车辆管理</label>
 <div class="carMenegerMaindiv">
     <h3 class="carMenegerH3"></h3>
@@ -14,12 +15,12 @@
     <div>
         <table id="carMenegerTable" cellpadding="0" cellspacing="0">
             <tr id='tableHead'>
-                <th style="width: 20%;"><input value="编号" onclick=cleanHead0() onchange=fun()></input></th>
-                <th style="width: 15%;"><input value="牌照" onclick=cleanHead1() onchange=fun()></input></th>
-                <th style="width: 15%;"><input value="车主" onclick=cleanHead2() onchange=fun()></input></th>
-                <th style="width: 20%;"><input value="信息" onclick=cleanHead3() onchange=fun()></input></th>
-                <th style="width: 10%;"><input value="所在路测单元" onclick=cleanHead4() onchange=fun()></input></th>
-                <th style="width: 10%;"><input value="时间" onclick=cleanHead5() onchange=fun()></input></th>
+                <th style="width: 20%;"><span>编号</span></th>
+                <th style="width: 15%;"><span>牌照</span></th>
+                <th style="width: 15%;"><span>车主</span></th>
+                <th style="width: 20%;"><span>信息</span></th>
+                <th style="width: 10%;"><span>所在路测单元</span></th>
+                <th style="width: 10%;"><span>时间</span></th>
                 <th style="width: 10%;"><button id="clean">还原</th>
             <tr>
                 <td></td>
@@ -96,6 +97,7 @@
         <a href="/carMeneger?pageNumber={{pageNumberAdd}}" class="thisSelect">{{pageNumberAdd}}</a>
         <a href="/carMeneger?pageNumber={{pageNumberAdd}}">></a>
     </div>
+</div>
 </div>
 
 {{!-- 页脚 --}}

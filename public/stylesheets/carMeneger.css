@@ -1,17 +1,21 @@
+.info-container {
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+    text-align: left;
+    margin-top: 75px;
+}
+
 .carMenegerMaindiv {
     border: 1px solid white;
     background: white;
-    width: 81%;
+    width: 100%;
     height: 750px;
-    float: left;
-    margin-left: 330px;
     margin-top: 20px;
 }
 
 .carMenegerBread {
-    float: left;
     color: #1890ff;
-    margin-left: 330px;
     margin-top: 100px;
 }
 
@@ -19,11 +23,8 @@
 /* 页脚 */
 
 .carMenegerFoot {
-    float: left;
-    margin-top: 150px;
-    margin-left: 300px;
-    width: 84.1%;
-    height: 85px;
+    width: 100%;
+    margin-top: 220px;
     background: white;
 }
 
@@ -49,8 +50,8 @@
 
 #carMenegerTable {
     width: 95%;
-    margin-top: 45px;
-    margin-left: 35px
+    margin: 0 auto;
+    margin-top: 5px;
 }
 
 #carMenegerTable tr th {
@@ -108,8 +109,9 @@
 }
 
 .pages {
+    display: flex;
+    justify-content: flex-end;
     margin-top: 25px;
-    margin-left: 590px;
     width: auto;
 }
 

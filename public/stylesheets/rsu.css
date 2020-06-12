@@ -1,17 +1,22 @@
+.info-container {
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+    text-align: left;
+    margin-top: 75px;
+}
+
 .rusMaindiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
     border: 1px solid white;
     background: white;
-    width: 81%;
-    height: 750px;
-    float: left;
-    margin-left: 330px;
-    margin-top: 20px;
 }
 
 .rsuBread {
-    float: left;
     color: #1890ff;
-    margin-left: 330px;
     margin-top: 100px;
 }
 
@@ -19,11 +24,8 @@
 /* 页脚 */
 
 .rsuFoot {
-    float: left;
     margin-top: 150px;
-    margin-left: 300px;
-    width: 84.1%;
-    height: 85px;
+    width: 100%;
     background: white;
 }
 
@@ -49,8 +51,8 @@
 
 #rsuTable {
     width: 95%;
-    margin-top: 45px;
-    margin-left: 35px
+    margin: 0 auto;
+    margin-top: 5px;
 }
 
 #rsuTable tr th {
@@ -109,8 +111,9 @@
 
 .pages {
     margin-top: 25px;
-    margin-left: 590px;
     width: auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .pages a {

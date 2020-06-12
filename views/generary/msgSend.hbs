@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="stylesheets/msgSend.css" />
+<div class="info-container">
 <label class="msgSendBread">后台管理 / 表格信息 / 信息分发</label>
 <div class="msgSendMaindiv">
     <h3 class="msgSendH3"></h3>
@@ -31,12 +32,12 @@
     <div>
         <table id="msgSendTable" cellpadding="0" cellspacing="0">
             <tr id='tableHead'>
-                <th style="width: 20%;"><input value="编号" onclick=cleanHead0() onchange=fun()></input></th>
-                <th style="width: 15%;"><input value="开始时间" onclick=cleanHead1() onchange=fun()></input></th>
-                <th style="width: 15%;"><input value="持续时间" onclick=cleanHead2() onchange=fun()></input></th>
-                <th style="width: 10%;"><input value="种类" onclick=cleanHead3() onchange=fun()></input></th>
-                <th style="width: 15%;"><input value="rsu" onclick=cleanHead4() onchange=fun()></input></th>
-                <th style="width: 15%;"><input value="内容" onclick=cleanHead5() onchange=fun()></input></th>
+                <th style="width: 20%;"><span>编号</span></th>
+                <th style="width: 15%;"><span>开始时间</span></th>
+                <th style="width: 15%;"><span>持续时间</span></th>
+                <th style="width: 10%;"><span>种类</span></th>
+                <th style="width: 15%;"><span>rsu</span></th>
+                <th style="width: 15%;"><span>内容</span></th>
                 <th style="width: 10%;"><button id="clean">还原</th>
             <tr>
                 <td></td>
@@ -113,7 +114,8 @@
         <a href="/msgSend?pageNumber={{pageNumberAdd}}" class="thisSelect">{{pageNumberAdd}}</a>
         <a href="/msgSend?pageNumber={{pageNumberAdd}}">></a>
     </div>
-<//li>
+</div>
+</div>
 
 {{!-- 页脚 --}}
 <div class="msgSendFoot">
