@@ -7,31 +7,6 @@
 }
 
 .rusMaindiv {
-<<<<<<< HEAD
-    /* border: 1px solid white;
-    background: white;
-    width: 81%;
-    height: 750px;
-    float: left;
-    margin-left: 330px;
-    margin-top: 20px; */
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
-}
-
-.rsuBread {
-    /* float: left; */
-    color: #1890ff;
-    /* margin-left: 330px;
-    margin-top: 100px; */
-    margin-top: 10px;
-}
-
-.rsu-table-box {
-    position: relative;
-=======
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -43,7 +18,6 @@
 .rsuBread {
     color: #1890ff;
     margin-top: 100px;
->>>>>>> bf9418d9a428304ac5674cb9d42666762baac4eb
 }
 
 
@@ -51,15 +25,7 @@
 /* 页脚 */
 
 .rsuFoot {
-<<<<<<< HEAD
-    /* float: left; */
     margin-top: 150px;
-    /* margin-left: 300px; */
-    /* width: 84.1%; */
-    /* height: 85px; */
-=======
-    margin-top: 150px;
->>>>>>> bf9418d9a428304ac5674cb9d42666762baac4eb
     width: 100%;
     background: white;
 }
@@ -86,11 +52,6 @@
 
 #rsuTable {
     width: 95%;
-<<<<<<< HEAD
-    /* margin-top: 45px;
-    margin-left: 35px */
-=======
->>>>>>> bf9418d9a428304ac5674cb9d42666762baac4eb
     margin: 0 auto;
     margin-top: 5px;
 }
@@ -151,10 +112,6 @@
 
 .pages {
     margin-top: 25px;
-<<<<<<< HEAD
-    /* margin-left: 590px; */
-=======
->>>>>>> bf9418d9a428304ac5674cb9d42666762baac4eb
     width: auto;
     display: flex;
     justify-content: flex-end;

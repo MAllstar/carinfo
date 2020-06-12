@@ -9,27 +9,13 @@
 .msgSendMaindiv {
     border: 1px solid white;
     background: white;
-<<<<<<< HEAD
-    /* width: 81%; */
     width: 100%;
     height: 950px;
-    /* float: left;
-    margin-left: 330px; */
-=======
-    width: 100%;
-    height: 950px;
->>>>>>> bf9418d9a428304ac5674cb9d42666762baac4eb
     margin-top: 20px;
 }
 
 .msgSendBread {
-<<<<<<< HEAD
-    /* float: left; */
     color: #1890ff;
-    /* margin-left: 330px; */
-=======
-    color: #1890ff;
->>>>>>> bf9418d9a428304ac5674cb9d42666762baac4eb
     margin-top: 100px;
 }
 
@@ -52,15 +38,7 @@ ul {
 /* 页脚 */
 
 .msgSendFoot {
-<<<<<<< HEAD
-    /* float: left; */
     margin-top: 150px;
-    /* margin-left: -30px; */
-    /* width: 120%; */
-    /* height: 85px; */
-=======
-    margin-top: 150px;
->>>>>>> bf9418d9a428304ac5674cb9d42666762baac4eb
     width: 100%;
     background: white;
 }
@@ -88,11 +66,6 @@ ul {
 #msgSendTable {
     margin: 0 auto;
     width: 95%;
-<<<<<<< HEAD
-    /* margin-top: 45px; */
-    /* margin-left: 35px */
-=======
->>>>>>> bf9418d9a428304ac5674cb9d42666762baac4eb
     margin-top: 5px;
 }
 
