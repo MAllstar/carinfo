@@ -10,23 +10,21 @@
 <div class="title">
     <h2>注册页</h2>
 </div>
-<div class="divLeft">
-    <form action="/regist" method="POST">
-        <div class="message">{{message}}</div>
-        <label>你的邮箱</label>
-        <div><input type="text" name="mail" placeholder="mail" id='mail' required></div>
-        <label>你的密码</label>
-        <div><input type="password" name="psd" placeholder="password" required></div>
-        <label>确认密码</label>
-        <div><input type="password" name="psdAgain" placeholder="password-again" required></div>
-        <label>输入验证码</label>
-        <div><input type="text" name="vsCode" placeholder="vsCode" required></div>
-        <div>
-            <input type="button" id='getVsCode' class="btn1" name="getVsCode" value='验证码'>
-            <input type="submit" class="btn2" value="注册">
-        </div>
-    </form>
-</div>
+<form action="/regist" method="POST" class="regist-form">
+    <div class="message">{{message}}</div>
+    <label>你的邮箱</label>
+    <div><input type="text" name="mail" placeholder="mail" id='mail' required></div>
+    <label>你的密码</label>
+    <div><input type="password" name="psd" placeholder="password" required></div>
+    <label>确认密码</label>
+    <div><input type="password" name="psdAgain" placeholder="password-again" required></div>
+    <label>输入验证码</label>
+    <div><input type="text" name="vsCode" placeholder="vsCode" required></div>
+    <div>
+        <input type="button" id='getVsCode' class="btn1" name="getVsCode" value='验证码'>
+        <input type="submit" class="btn2" value="注册">
+    </div>
+</form>
 <div class="divRight">
     <label>关于车联网</label>
     <p>

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="stylesheets/rsu.css" />
+<div class="info-container">
 <label class="rsuBread">后台管理 / 表格信息 / 路测单元</label>
 <div class="rusMaindiv">
     <h3 class="rsuH3"></h3>
@@ -12,11 +13,11 @@
     <div>
         <table id="rsuTable" cellpadding="0" cellspacing="0">
             <tr id='tableHead'>
-                <th style="width: 20%;"><input value="编号" onclick=cleanHead0() onchange=fun()></input></th>
-                <th style="width: 20%;"><input value="经纬度" onclick=cleanHead1() onchange=fun()></input></th>
-                <th style="width: 20%;"><input value="范围内车辆数" onclick=cleanHead2() onchange=fun()></input></th>
-                <th style="width: 15%;"><input value="状态" onclick=cleanHead3() onchange=fun()></input></th>
-                <th style="width: 15%;"><input value="组别" onclick=cleanHead4() onchange=fun()></input></th>
+                <th style="width: 20%;"><span>编号</span></th>
+                <th style="width: 20%;"><span>经纬度</span></th>
+                <th style="width: 20%;"><span>范围内车辆数</span></th>
+                <th style="width: 15%;"><span>状态</span></th>
+                <th style="width: 15%;"><span>组别</span></th>
                 <th style="width: 10%;"><button id="clean">还原</th>
             <tr>
                 <td></td>
@@ -85,6 +86,7 @@
         <a href="/rsu?pageNumber={{pageNumberAdd}}" class="thisSelect">{{pageNumberAdd}}</a>
         <a href="/rsu?pageNumber={{pageNumberAdd}}">></a>
     </div>
+</div>
 </div>
 
 {{!-- 页脚 --}}
