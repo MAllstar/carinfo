@@ -130,12 +130,12 @@
     //初始化数据及变量
     var pageNumber = 0;
     pageNumber = getQueryStringArgs()["pageNumber"] || 0;
-    var _id = $("#clean").parents("tr").find("th").eq(0).find("input").val();
-    var startTime = $("#clean").parents("tr").find("th").eq(1).find("input").val();
-    var continueTime = $("#clean").parents("tr").find("th").eq(2).find("input").val();
-    var kind = $("#clean").parents("tr").find("th").eq(3).find("input").val();
-    var rsu = $("#clean").parents("tr").find("th").eq(4).find("input").val();
-    var content = $("#clean").parents("tr").find("th").eq(5).find("input").val();
+    var _id = $("#clean").parents("tr").find("th").eq(0).find("sapn").text();
+    var startTime = $("#clean").parents("tr").find("th").eq(1).find("span").text();
+    var continueTime = $("#clean").parents("tr").find("th").eq(2).find("span").text();
+    var kind = $("#clean").parents("tr").find("th").eq(3).find("span").text();
+    var rsu = $("#clean").parents("tr").find("th").eq(4).find("span").text();
+    var content = $("#clean").parents("tr").find("th").eq(5).find("span").text();
 
     //显示初始数据
     refresh();

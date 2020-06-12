@@ -102,11 +102,11 @@
     //初始化数据及变量
     var pageNumber = 0;
     pageNumber = getQueryStringArgs()["pageNumber"] || 0;
-    var _id = $("#clean").parents("tr").find("th").eq(0).find("input").val();
-    var loAndLa = $("#clean").parents("tr").find("th").eq(1).find("input").val();
-    var carNum = $("#clean").parents("tr").find("th").eq(2).find("input").val();
-    var state = $("#clean").parents("tr").find("th").eq(3).find("input").val();
-    var group = $("#clean").parents("tr").find("th").eq(4).find("input").val();
+    var _id = $("#clean").parents("tr").find("th").eq(0).find("span").text();
+    var loAndLa = $("#clean").parents("tr").find("th").eq(1).find("span").text();
+    var carNum = $("#clean").parents("tr").find("th").eq(2).find("span").text();
+    var state = $("#clean").parents("tr").find("th").eq(3).find("span").text();
+    var group = $("#clean").parents("tr").find("th").eq(4).find("span").text();
 
     //显示初始数据
     refresh();
